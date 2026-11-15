@@ -72,13 +72,13 @@ My details:
 
 How I want it:
 - Use Astro Starlight for the site
-- I write articles as markdown files. Keep them in their own folder at the top of the repo, with the site code in a separate folder, so anyone browsing the repo sees the articles first
-- Give me a homepage, a page for each section and an article template I can copy
-- Add a Latest notes list to the homepage that shows the newest articles automatically, using a date at the top of each article
+- I write articles as markdown files. Keep them in their own folder at the top of the repo, with the site code in a separate folder called site, so anyone browsing the repo sees the articles first
+- Give me a homepage, a page for each section and an article template I can copy. The template itself shouldn't be published
+- Add a Latest notes list to the homepage that shows the newest articles automatically, using a date at the top of each article. Include the date in the template
 - Build the sidebar from my folders, so a new folder becomes a new section and a new markdown file becomes a new page, with no config changes. Check the menus actually list the articles, not just that the build passes
 - Publish automatically with GitHub Actions whenever I push to main
 - Test-build every pull request without publishing it
-- Set up Dependabot to check for updates monthly. If an update passes the test build, merge it and redeploy the site automatically
+- Set up Dependabot to check the site's packages and GitHub Actions for updates monthly. If an update passes the test build, merge it and redeploy the site automatically
 - Keep code comments and the README minimal
 
 Setup:
@@ -86,6 +86,7 @@ Setup:
 - Create the repo, point the subdomain at it, and verify my domain on GitHub
 - Check my existing DNS records before adding anything, and don't change them
 - Make sure the site builds before you push anything
+- If you can't push with my Git sign-in, use computer use to run git push on my machine
 - Once GitHub has issued the HTTPS certificate, turn on Enforce HTTPS
 - Confirm the site is live on my domain when you're done
 ```
