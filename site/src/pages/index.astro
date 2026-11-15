@@ -24,7 +24,7 @@ const formatDate = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', 
 	}}
 >
 	<h2>Latest notes</h2>
-	<ul class="latest">
+	<ul class="latest not-content">
 		{notes.map((n) => (
 			<li>
 				<a href={`/${n.id}/`}>{n.data.title}</a>

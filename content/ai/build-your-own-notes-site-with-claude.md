@@ -1,6 +1,6 @@
 ---
-title: Build your own notes site with Claude, GitHub Pages and a custom domain
-description: How to get Claude to create a markdown notes site like this one, hosted free on GitHub Pages under your own domain, from a single prompt.
+title: Build your own notes site (GitHub Pages) with Claude
+description: How to get Claude to create a markdown notes site like this one, hosted free on GitHub Pages under your own domain.
 date: 2026-11-15
 sidebar:
   order: 10
@@ -93,13 +93,13 @@ How it's controlled:
 
 - You approve access to the folder, the browser and any apps before Claude uses them
 - GitHub and DNS changes are made in your own browser, under your existing sign-ins
-- Nothing is pushed until the site builds
+- Claude test-builds the site in its own workspace before pushing anything
 - If Claude can't use your Git sign-in, it will either ask you to run `git push` or run it on your machine with computer use
 
 What you do:
 
 - Approve access when prompted
-- Run `git push` once yourself, if asked
+- Run `git push` once yourself, if asked (or tell Claude to do it using computer use)
 - Ask Claude to turn on Enforce HTTPS later, if the certificate wasn't ready during the build
 
 ## What gets set up
