@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightThemeNova from 'starlight-theme-nova';
 
 export default defineConfig({
 	site: 'https://notes.joshj.co.uk',
 	integrations: [
 		starlight({
+			plugins: [starlightThemeNova()],
 			title: 'Josh Janisch - Notes',
 			description: 'Technical notes and documentation on Azure and AI.',
 			social: [
