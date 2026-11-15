@@ -185,3 +185,5 @@ npm run dev
 - You only need `npm install` the first time
 
 If you don't want to preview locally, you can skip installing Node.js.
+
+If anything doesn’t work the way I’ve described, paste a link to this page into Claude and ask it to fill in the gaps.
