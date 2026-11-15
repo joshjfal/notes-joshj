@@ -27,6 +27,13 @@ You can paste the prompts below into Claude yourself, or point Claude Code at th
 - Dependency updates that test, merge and deploy themselves
 - No server, no CMS, no running cost
 
+## Running costs and upkeep
+
+- GitHub Pages, Actions and Dependabot are free for public repos
+- The HTTPS certificate is free and renews itself
+- The only regular task is reviewing the occasional major upgrade
+- GitHub emails you if a build fails
+
 ## Prerequisites
 
 - A GitHub account, signed in
@@ -176,10 +183,3 @@ npm run dev
 - You only need `npm install` the first time
 
 If you don't want to preview locally, you can skip installing Node.js.
-
-## Running costs and upkeep
-
-- GitHub Pages, Actions and Dependabot are free for public repos
-- The HTTPS certificate is free and renews itself
-- The only regular task is reviewing the occasional major upgrade
-- GitHub emails you if a build fails
