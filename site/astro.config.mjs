@@ -8,7 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			plugins: [starlightThemeNova()],
-			title: 'Josh Janisch - Notes',
+			title: 'Josh J',
 			description: 'Technical notes and documentation on Azure and AI.',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/joshjfal' },

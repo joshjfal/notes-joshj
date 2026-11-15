@@ -1,9 +1,9 @@
 ---
-title: Josh Janisch - Notes
+title: Josh J’s Technical Notes
 description: Technical notes and documentation on Azure and AI.
 template: splash
 hero:
-  tagline: Practical notes on Azure and AI, written up from real work.
+  tagline: Practical notes from what I’m learning in Azure and AI.
   actions:
     - text: Azure
       link: /azure/
