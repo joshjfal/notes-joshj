@@ -1,6 +1,7 @@
 ---
 title: Build your own notes site with Claude, GitHub Pages and a custom domain
 description: How to get Claude to create a markdown notes site like this one, hosted free on GitHub Pages under your own domain, from a single prompt.
+date: 2026-11-15
 sidebar:
   order: 10
 ---

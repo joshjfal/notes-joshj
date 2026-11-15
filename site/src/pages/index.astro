@@ -1,0 +1,59 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+
+const notes = (await getCollection('docs', ({ data }) => data.date && !(import.meta.env.PROD && data.draft)))
+	.sort((a, b) => b.data.date!.getTime() - a.data.date!.getTime())
+	.slice(0, 10);
+
+const formatDate = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Technical Notes',
+		description: 'Technical notes and documentation on Azure and AI.',
+		template: 'splash',
+		hero: {
+			tagline: 'Practical notes from what I’m learning in Azure and AI.',
+			actions: [
+				{ text: 'Azure', link: '/azure/', icon: 'right-arrow' },
+				{ text: 'AI', link: '/ai/', icon: 'right-arrow', variant: 'minimal' },
+			],
+		},
+	}}
+>
+	<h2>Latest notes</h2>
+	<ul class="latest">
+		{notes.map((n) => (
+			<li>
+				<a href={`/${n.id}/`}>{n.data.title}</a>
+				<time datetime={n.data.date!.toISOString()}>{formatDate(n.data.date!)}</time>
+				{n.data.description && <p>{n.data.description}</p>}
+			</li>
+		))}
+	</ul>
+</StarlightPage>
+
+<style>
+	.latest {
+		list-style: none;
+		padding: 0;
+	}
+	.latest li {
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--sl-color-hairline);
+	}
+	.latest a {
+		font-weight: 600;
+		font-size: var(--sl-text-lg);
+	}
+	.latest time {
+		display: block;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+	.latest p {
+		margin: 0.25rem 0 0;
+	}
+</style>
