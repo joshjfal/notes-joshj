@@ -13,14 +13,3 @@ hero:
       icon: right-arrow
       variant: minimal
 ---
-
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-<CardGrid>
-	<Card title="Azure" icon="seti:config">
-		Infrastructure, networking, cost and operations. [Browse Azure notes](/azure/)
-	</Card>
-	<Card title="AI" icon="star">
-		Agents, Copilot Studio and putting AI to practical use. [Browse AI notes](/ai/)
-	</Card>
-</CardGrid>
