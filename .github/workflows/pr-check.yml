@@ -32,10 +32,7 @@ jobs:
       pull-requests: write
       actions: write
     steps:
-      - id: meta
-        uses: dependabot/fetch-metadata@v3
-      - if: steps.meta.outputs.package-ecosystem == 'github_actions' || steps.meta.outputs.update-type != 'version-update:semver-major'
-        env:
+      - env:
           GH_TOKEN: ${{ github.token }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |

@@ -16,7 +16,7 @@ Rather than build it by hand, I handed the job to Claude. Using Claude in Chrome
 
 This guide shows how to do the same for your own domain.
 
-You can paste the prompts below into Claude yourself, or point Claude Code at this page and ask it to follow and build.
+You can paste the prompts below into Claude yourself, or point Claude at this page and ask it to follow and build.
 
 ## What you get
 
@@ -31,7 +31,7 @@ You can paste the prompts below into Claude yourself, or point Claude Code at th
 
 - GitHub Pages, Actions and Dependabot are free for public repos
 - The HTTPS certificate is free and renews itself
-- The only regular task is reviewing the occasional major upgrade
+- Updates install themselves, so there's no regular upkeep
 - GitHub emails you if a build fails
 
 ## Prerequisites
@@ -74,9 +74,11 @@ How I want it:
 - Use Astro Starlight for the site
 - I write articles as markdown files. Keep them in their own folder at the top of the repo, with the site code in a separate folder, so anyone browsing the repo sees the articles first
 - Give me a homepage, a page for each section and an article template I can copy
+- Add a Latest notes list to the homepage that shows the newest articles automatically, using a date at the top of each article
+- Build the sidebar from my folders, so a new folder becomes a new section and a new markdown file becomes a new page, with no config changes. Check the menus actually list the articles, not just that the build passes
 - Publish automatically with GitHub Actions whenever I push to main
 - Test-build every pull request without publishing it
-- Set up Dependabot to check for updates monthly. If an update passes the test build, merge it and redeploy the site automatically, but leave major version upgrades for me to review
+- Set up Dependabot to check for updates monthly. If an update passes the test build, merge it and redeploy the site automatically
 - Keep code comments and the README minimal
 
 Setup:
@@ -139,8 +141,7 @@ What you do:
 ### Auto-merge
 
 - When a Dependabot pull request passes its test build, it merges itself and the site redeploys.
-- Major version upgrades are the exception. They stay open for you to review, because they're the ones most likely to need a change.
-- In practice, you only hear about updates when one needs a decision or fails its test build.
+- In practice, you only hear about updates when one fails its test build.
 
 ## Step 2 - Pick a theme
 
@@ -163,7 +164,7 @@ Apply the <theme-name> theme, check the site still builds, and push it.
 ## Step 3 - Publish articles
 
 - Copy the article template into a section folder and rename it. The file name becomes the page address.
-- Fill in the title and the one-line description at the top.
+- Fill in the title, the one-line description and the date at the top. The date sets its place in Latest notes on the homepage.
 - Push to main. The site updates in about a minute.
 - Files whose names start with an underscore, like the template, are never published.
 
@@ -179,6 +180,7 @@ npm run dev
 
 - Open `http://localhost:4321` in your browser to view the site
 - Changes to your articles show up as soon as you save them
+- If you add a brand new article, press Ctrl+C and run `npm run dev` again to see it in the menu
 - Press Ctrl+C in the terminal to stop it
 - You only need `npm install` the first time
 
